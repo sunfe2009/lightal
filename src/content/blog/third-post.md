@@ -2,11 +2,9 @@
 title: "干净界面的排版技巧"
 pubDate: 2025-04-05
 description: "掌握排版艺术，创建美观、易读的界面。"
-author: "Hanzo"
-image: "/images/blog/typography.jpg"
+author: "@molight"
+image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1920&auto=format&fit=crop"
 ---
-
-# 干净界面的排版技巧
 
 排版是界面设计中最重要的方面之一。良好的排版可以提高可读性，建立层次结构，并创造视觉和谐。
 

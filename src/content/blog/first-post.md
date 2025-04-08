@@ -2,11 +2,9 @@
 title: "极简设计入门指南"
 pubDate: 2025-04-01
 description: "学习如何创建干净、极简的设计，专注于内容和可用性。"
-author: "Hanzo"
-image: "/images/blog/minimal-design.jpg"
+author: "@molight"
+image: "https://images.unsplash.com/photo-1567016526105-22da7c13161a?q=80&w=1920&auto=format&fit=crop"
 ---
-
-# 极简设计入门指南
 
 极简设计的核心在于去除不必要的元素，专注于真正重要的内容。在这篇文章中，我们将探讨极简设计的原则以及如何将其应用到你的项目中。
 

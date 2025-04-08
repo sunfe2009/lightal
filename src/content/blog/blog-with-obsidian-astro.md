@@ -2,11 +2,9 @@
 title: "用 Obsidian 客户端发布文章到 Astro 博客"
 pubDate: 2025-02-13
 description: "相当于是静态网站有了 CMS 了"
-author: "Hanzo"
-image: "/images/blog/obsidian.jpg"
+author: "@molight"
+image: "https://images.unsplash.com/photo-1518976024611-28bf4b48222e?q=80&w=1800&auto=format&fit=crop"
 ---
-
-# 用 Obsidian 客户端发布文章到 Astro 博客
 
 很早就听说过 Obsidian，但是因为名字太拗口，一直没提起兴趣了解。
 最近偶然在小红书刷到它的插件市场，发现它有个功能可以直接把本地的 markdown 一键同步到对应的 Github 仓库，然后更新到静态网站的前端；

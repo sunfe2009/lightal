@@ -19,9 +19,24 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('zh-CN', {
   month: 'long',
   day: 'numeric'
 });
+
+// 处理图片 URL，支持 Unsplash
+const getImageUrl = (imageUrl) => {
+  if (!imageUrl) return null;
+  
+  // 如果是完整的 URL（包括 Unsplash URL），直接返回
+  if (imageUrl.startsWith('http')) {
+    return imageUrl;
+  }
+  
+  // 本地图片路径
+  return imageUrl;
+};
+
+const imageUrl = getImageUrl(entry.data.image);
 ---
 
-<BaseLayout title={entry.data.title + " | Minimal"}>
+<BaseLayout title={entry.data.title + " | lightal"}>
   <article class="blog-post">
     <div class="px-8 md:px-12 max-w-2xl mx-auto pt-12 pb-24">
       <div class="mb-8">
@@ -29,20 +44,18 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('zh-CN', {
       </div>
       
       <header class="mb-12">
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-black mb-4">{entry.data.title}</h1>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-black mb-4">{entry.data.title}</h1>
         <div class="flex items-center gap-4 text-zinc-500 text-sm">
           <time datetime={entry.data.pubDate.toISOString()}>{formattedDate}</time>
-          <span>·</span>
-          <span>{entry.data.author}</span>
         </div>
       </header>
       
-      {entry.data.image && (
-        <div class="mb-12 rounded-xl overflow-hidden">
+      {imageUrl && (
+        <div class="mb-12 rounded-xl overflow-hidden aspect-video">
           <img 
-            src={entry.data.image} 
+            src={imageUrl} 
             alt={entry.data.title} 
-            class="w-full h-auto object-cover"
+            class="w-full h-full object-cover"
           />
         </div>
       )}

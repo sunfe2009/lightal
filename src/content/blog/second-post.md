@@ -1,12 +1,11 @@
 ---
 title: "UI设计中留白的力量"
-pubDate: 2025-03-25
-description: "探索如何战略性地使用留白来提升你的用户界面。"
-author: "Hanzo"
-image: "/images/blog/white-space.jpg"
+pubDate: 2025-04-03
+description: "了解如何利用留白创建更有效、更优雅的用户界面。"
+author: "@molight"
+image: "https://images.unsplash.com/photo-1545239351-ef35f43d514b?q=80&w=1920&auto=format&fit=crop"
 ---
 
-# UI设计中留白的力量
 
 留白，也称为负空间，是设计中元素之间的空白区域。它远非浪费空间，而是一种能够显著改善你的设计的强大工具。
 
