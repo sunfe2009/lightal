@@ -27,7 +27,7 @@ function getReadingTime(content: string) {
 ---
 
 <section class="blog-list">
-  <div class="px-8 md:px-12 max-w-2xl mx-auto">
+  <div class="max-w-2xl mx-auto px-8">
     <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-200 mb-12">Blog</h1>
     
     <div class="posts-grid">
@@ -56,6 +56,7 @@ function getReadingTime(content: string) {
   .posts-grid {
     display: grid;
     gap: 1.5rem;
+    max-width: 100%;
   }
 
   .post-card {
@@ -68,6 +69,7 @@ function getReadingTime(content: string) {
     border-radius: 12px;
     transition: all 0.2s ease;
     border: 1px solid transparent;
+    overflow: hidden;
   }
 
   .post-card:hover {
@@ -81,11 +83,12 @@ function getReadingTime(content: string) {
     font-size: 0.9rem;
     white-space: nowrap;
     min-width: 80px;
+    flex-shrink: 0;
   }
 
   h3 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.4;
     white-space: nowrap;
@@ -93,6 +96,7 @@ function getReadingTime(content: string) {
     text-overflow: ellipsis;
     color: #000;
     flex: 1;
+    min-width: 0;
   }
 
   .reading-time {
@@ -102,6 +106,7 @@ function getReadingTime(content: string) {
     white-space: nowrap;
     min-width: 90px;
     text-align: right;
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
