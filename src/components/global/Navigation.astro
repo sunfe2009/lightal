@@ -1,9 +1,9 @@
-<div class="relative z-50 py-4">
+<div class="relative z-100 py-4">
   <div class="max-w-2xl mx-auto px-8">
     <div class="w-full mx-auto">
       <div
         x-data="{ open: false }"
-        class="relative flex flex-col w-full p-3 mx-auto bg-white ring-1 uppercase ring-zinc-200 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+        class="relative flex flex-col w-full p-3 mx-auto bg-white/20 ring-1 uppercase ring-white/50 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
       >
         <div
           class="flex flex-row items-center justify-between md:justify-start"
@@ -47,7 +47,7 @@
             <li>
               <a
                 href="/"
-                class="hover:text-black shrink-0 px-3 py-2 rounded-full border border-transparent hover:border-zinc-200"
+                class="hover:text-black shrink-0 px-3 py-2 rounded-full border border-transparent hover:border-white-200"
               >
                 Home</a
               >
@@ -66,8 +66,10 @@
   .logo-glow {
     transition: filter 0.3s ease-out;
   }
-  
+
   .logo-glow:hover {
-    filter: drop-shadow(0 0 12px rgba(209, 255, 17, 0.8));
-  }
+    filter: 
+      drop-shadow(0 0 16px rgba(209, 255, 17, 0.6)) 
+      drop-shadow(0 0 32px rgba(209, 255, 17, 0.4)) 
+      drop-shadow(0 0 48px rgba(209, 255, 17, 0.2));  }
 </style>
