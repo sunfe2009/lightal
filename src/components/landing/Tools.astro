@@ -1,0 +1,98 @@
+---
+interface Tool {
+  name: string;
+  icon: string;
+  url: string;
+  description?: string;
+}
+
+interface Props {
+  title?: string;
+  tools?: Tool[];
+}
+
+// Default tools data
+const defaultTools: Tool[] = [
+  {
+    name: "Figma",
+    icon: "/images/tools/tool.png",
+    url: "https://figma.com"
+  },
+  {
+    name: "Sketch",
+    icon: "/images/tools/tool.png",
+    url: "https://sketch.com"
+  },
+  {
+    name: "Adobe XD",
+    icon: "/images/tools/tool.png",
+    url: "https://adobe.com/products/xd.html"
+  },
+  {
+    name: "Photoshop",
+    icon: "/images/tools/tool.png",
+    url: "https://adobe.com/products/photoshop.html"
+  },
+  {
+    name: "Illustrator",
+    icon: "/images/tools/tool.png",
+    url: "https://adobe.com/products/illustrator.html"
+  }
+];
+
+const { title = "TOOLS", tools = defaultTools } = Astro.props;
+---
+
+<section class="overflow-hidden relative">
+  <div class="px-8 md:px-12 py-12 max-w-2xl mx-auto relative">
+    <h2 class="text-sm uppercase tracking-wider text-zinc-500 mb-6">{title}</h2>
+    <div class="tools-grid">
+      {tools.map(tool => (
+        <a href={tool.url} target="_blank" rel="noopener" class="tool-card" title={tool.name}>
+          <img src={tool.icon} alt={`${tool.name} icon`} />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .tool-card {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s ease;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .tool-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .tools-grid {
+      gap: 1rem;
+    }
+    
+    .tool-card {
+      width: 32px;
+      height: 32px;
+    }
+  }
+</style>
