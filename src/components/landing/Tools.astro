@@ -15,32 +15,58 @@ interface Props {
 const defaultTools: Tool[] = [
   {
     name: "Figma",
-    icon: "/images/tools/tool.png",
+    icon: "/images/tools/figma.svg",
     url: "https://figma.com"
   },
   {
-    name: "Sketch",
-    icon: "/images/tools/tool.png",
-    url: "https://sketch.com"
+    name: "OpenAI",
+    icon: "/images/tools/openai.svg",
+    url: "https://openai.com"
   },
   {
-    name: "Adobe XD",
-    icon: "/images/tools/tool.png",
-    url: "https://adobe.com/products/xd.html"
+    name: "ReCraft",
+    icon: "/images/tools/recraft.svg",
+    url: "https://www.recraft.ai/invite/BvUywWf605"
   },
   {
-    name: "Photoshop",
-    icon: "/images/tools/tool.png",
-    url: "https://adobe.com/products/photoshop.html"
+    name: "Codeium",
+    icon: "/images/tools/codeium.webp",
+    url: "https://codeium.com/refer?referral_code=961da8806b"
   },
   {
-    name: "Illustrator",
-    icon: "/images/tools/tool.png",
-    url: "https://adobe.com/products/illustrator.html"
+    name: "Bolt",
+    icon: "/images/tools/bolt.svg",
+    url: "https://bolt.new/?rid=6essw3"
+  },
+  {
+    name: "Perplexity",
+    icon: "/images/tools/perplexity.svg",
+    url: "https://perplexity.ai/pro?referral_code=30ZZ97DW"
+  },
+  {
+    name: "Visualelectric",
+    icon: "/images/tools/visualelectric.svg",
+    url: "https://visualelectric.com/referral/9fcb1189-f90b-41cc-967a-540749a9e58e"
+  },
+  {
+    name: "UXPilot",
+    icon: "/images/tools/uxpilot.svg",
+    url: "https://uxpilot.ai/?ref=cool"
+  },
+  {
+    name: "Monica",
+    icon: "/images/tools/monica.svg",
+    url: "https://monica.im/invitation?c=A3ZHG8DM"
+  },
+  {
+    name: "Flowith",
+    icon: "/images/tools/flowith.svg",
+    url: "https://flowith.io/invitation?code=HKV31L"
   }
+
 ];
 
-const { title = "TOOLS", tools = defaultTools } = Astro.props;
+const { title = "TOOLS I CAN'T LIVE WITHOUT", tools = defaultTools } = Astro.props;
 ---
 
 <section class="overflow-hidden relative">
@@ -65,8 +91,8 @@ const { title = "TOOLS", tools = defaultTools } = Astro.props;
   }
 
   .tool-card {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
