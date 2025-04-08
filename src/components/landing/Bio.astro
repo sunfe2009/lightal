@@ -1,0 +1,45 @@
+---
+// Bio component with mixed text and images layout
+---
+
+<section class="overflow-hidden relative py-50 md:py-40">
+  <div class="px-8 md:px-12 max-w-2xl mx-auto relative">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-black mb-8">About Me</h1>
+    
+    <div class="relative">
+      <!-- Bio text with integrated images -->
+      <div>
+        <p class="text-base text-zinc-500 leading-relaxed">
+          I'm <span class="text-black">Hanzo</span> 
+          <span class="inline-block align-middle relative mx-1">
+            <a href="/about" target="_blank" rel="noopener noreferrer">
+              <img src="/images/avatar.jpg" alt="Profile" class="w-12 h-12 rounded-lg object-cover border-2 border-white shadow-md" />
+            </a>
+          </span>, 
+          a <span class="text-black">Product</span> <span class="text-black">Designer</span>
+          <span class="inline-block align-middle relative mx-1">
+            <a href="/projects" target="_blank" rel="noopener noreferrer">
+              <img src="/images/project1.png" alt="Work" class="w-12 h-12 rounded-lg object-cover border-2 border-white shadow-md" />
+            </a>
+          </span>
+          based in <span class="text-black">Tokyo</span> 
+          <span class="inline-block align-middle relative mx-1">
+            <a href="/location" target="_blank" rel="noopener noreferrer">
+              <img src="/images/city.png" alt="Tokyo" class="w-12 h-12 rounded-lg object-cover border-2 border-white shadow-md" />
+            </a>
+          </span>
+        </p>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="mt-8">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full px-3 py-1 text-sm leading-6 text-black ring-1 ring-zinc-200 bg-white ring-inset">
+          Get Template
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
