@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return !data.draft;
+});
+
+const latestPosts = posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Calculate reading time (approximately 200 words per minute)
+function getReadingTime(content: string) {
+  const words = content.split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} m`;
+}
+---
+
+<section class="latest-posts">
+  <h2>LATEST POSTS</h2>
+  <div class="posts-grid">
+    {latestPosts.map(post => (
+      <a href={`/blog/${post.slug}`} class="post-card">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: '2-digit'
+          }).replace(/\//g, '/')}
+        </time>
+        <h3>{post.data.title}</h3>
+        <span class="reading-time">{getReadingTime(post.body)}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .latest-posts {
+    margin: 4rem 0;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: #888;
+  }
+
+  .posts-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    text-decoration: none;
+    color: var(--text);
+    padding: 1rem;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+  }
+
+  .post-card:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  time {
+    font-family: monospace;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .reading-time {
+    font-family: monospace;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .latest-posts {
+      padding: 0 1rem;
+    }
+
+    .post-card {
+      grid-template-columns: 80px 1fr auto;
+      gap: 1rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
