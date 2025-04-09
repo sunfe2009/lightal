@@ -1,5 +1,5 @@
 {
-  "name": "lightal",
+  "name": "far-light",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
-    "@astrolib/seo": "^1.0.0-beta.5",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "astro": "^5.1.6",
+    "astro-seo": "^0.8.4",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

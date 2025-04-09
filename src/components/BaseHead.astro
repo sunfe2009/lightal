@@ -1,105 +1,62 @@
 ---
 import "../styles/global.css";
-import { AstroSeo } from "@astrolib/seo";
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Far Light" } = Astro.props;
 ---
 
-<AstroSeo
-  title="lightal"
+<SEO
+  title={title}
   description="@molight 的个人博客，记录想法和学习笔记"
-  canonical="https://lightal.com"
+  canonical="https://far.li"
   openGraph={{
-    url: "https://lightal.com",
-    title: "lightal",
-    description: "@molight 的个人博客，记录想法和学习笔记",
-    images: [
-      {
-        url: "https://lightal.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "lightal - @molight 的个人博客",
-        type: "image/jpeg",
-      },
-    ],
-    site_name: "lightal",
-    type: "website",
-    locale: "zh_CN",
+    basic: {
+      title: title,
+      type: "website",
+      image: "https://far.li/og-image.jpg",
+      url: "https://far.li",
+    },
+    optional: {
+      description: "@molight 的个人博客，记录想法和学习笔记",
+      siteName: "Far Light",
+      locale: "zh_CN",
+    }
   }}
   twitter={{
-    handle: "@molightme",
+    creator: "@molightme",
     site: "@molightme",
-    cardType: "summary_large_image",
+    card: "summary_large_image",
+  }}
+  extend={{
+    meta: [
+      { name: "keywords", content: "Far Light, molight, 博客, AI, 设计, 自由职业" },
+      { name: "author", content: "@molight" },
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
+      { name: "theme-color", content: "#ffffff" },
+      { httpEquiv: "X-UA-Compatible", content: "IE=edge" },
+    ],
+    link: [
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/favicon-48x48.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "preconnect", href: "https://rsms.me/" },
+      { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
+    ]
   }}
 />
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<!-- Basic Meta Tags -->
-<title>lightal</title>
-<meta
-  name="description"
-  content="@molight 的个人博客，记录想法和学习笔记"
-/>
-<meta name="keywords" content="lightal, molight, 博客, AI, 设计, 自由职业" />
-<meta name="author" content="@molight" />
-
-<!-- Favicons -->
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" href="/icon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/manifest.webmanifest" />
-
-<!-- Favicon for IE -->
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
-<!-- Favicons for different sizes -->
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lightal.com/" />
-<meta property="og:title" content="lightal" />
-<meta
-  property="og:description"
-  content="@molight 的个人博客，记录想法和学习笔记"
-/>
-<meta
-  property="og:image"
-  content="https://lightal.com/og-image.jpg"
-/>
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://lightal.com/" />
-<meta property="twitter:title" content="lightal" />
-<meta
-  property="twitter:description"
-  content="@molight 的个人博客，记录想法和学习笔记"
-/>
-<meta
-  property="twitter:image"
-  content="https://lightal.com/og-image.jpg"
-/>
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://lightal.com/" />
-
-<!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-
-<!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-<!-- Theme Color for Mobile Browsers -->
-<meta name="theme-color" content="#ffffff" />
-
-<!-- For IE -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

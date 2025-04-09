@@ -7,6 +7,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   // Add your domain name here
-  site: "https://lightal.com/",
+  site: "https://far.li/",
   integrations: [ sitemap()]
 });
