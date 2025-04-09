@@ -22,7 +22,7 @@ function getReadingTime(content: string) {
   const englishMinutes = nonChineseWords / 200;
   
   const totalMinutes = Math.ceil(chineseMinutes + englishMinutes);
-  return `${totalMinutes} 分钟阅读`;
+  return `${totalMinutes}min`;
 }
 ---
 
@@ -41,7 +41,7 @@ function getReadingTime(content: string) {
             }).replace(/\//g, '/')}
           </time>
           <h3>{post.data.title}</h3>
-          <span class="reading-time">{getReadingTime(post.body)}</span>
+          <span class="reading-time hidden md:inline">{getReadingTime(post.body)}</span>
         </a>
       ))}
     </div>
@@ -55,17 +55,17 @@ function getReadingTime(content: string) {
 
   .posts-grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.2rem;
     max-width: 100%;
   }
 
   .post-card {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     text-decoration: none;
     color: var(--text, #000);
-    padding: 1.25rem;
+    padding: 1.25rem 0.75rem;
     border-radius: 12px;
     transition: all 0.2s ease;
     border: 1px solid transparent;
