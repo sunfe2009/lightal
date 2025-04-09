@@ -17,7 +17,8 @@ const { title = "Far Light" } = Astro.props;
   </head>
   <body class="bg-zinc-100 flex flex-col min-h-screen relative overflow-x-hidden">
     <GradientHalo /> 
-    <div class="relative z-20 w-full max-w-screen-xl mx-auto px-6 md:px-8 flex flex-col flex-grow">
+    {/* 减少移动端水平内边距: px-6 -> px-5 */}
+    <div class="relative z-20 w-full max-w-screen-xl mx-auto md:flex flex-col flex-grow">
       <Navigation/>
       <main class="flex-grow"><slot /></main>
       <Footer/>
