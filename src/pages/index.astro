@@ -2,8 +2,12 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Bio from "@/components/landing/Bio.astro";
 import Tools from "@/components/landing/Tools.astro";
+import PicStack from "@/components/global/PicStack.astro";
 ---
 <BaseLayout>
   <Bio />
   <Tools />
+  <div class="px-8 md:px-12 max-w-2xl mx-auto mt-12 mb-16">
+    <PicStack />
+  </div>
 </BaseLayout>
