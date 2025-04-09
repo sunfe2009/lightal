@@ -28,20 +28,20 @@ function getReadingTime(content: string) {
 
 <section class="blog-list">
   <div class="max-w-2xl mx-auto px-8">
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-200 mb-12">Blog</h1>
+    <h1 class="text-2xl md:text-5xl font-bold tracking-tight text-gray-200 mb-12">Blog</h1>
     
     <div class="posts-grid">
       {sortedPosts.map(post => (
         <a href={`/blog/${post.slug}`} class="post-card">
-          <time datetime={post.data.pubDate.toISOString()}>
+          <time datetime={post.data.pubDate.toISOString()} class="text-sm md:text-base">
             {post.data.pubDate.toLocaleDateString('en-GB', {
               day: '2-digit',
               month: '2-digit',
               year: '2-digit'
             }).replace(/\//g, '/')}
           </time>
-          <h3>{post.data.title}</h3>
-          <span class="reading-time hidden md:inline">{getReadingTime(post.body)}</span>
+          <h3 class="text-base md:text-xl">{post.data.title}</h3>
+          <span class="reading-time hidden md:inline text-sm md:text-base">{getReadingTime(post.body)}</span>
         </a>
       ))}
     </div>
