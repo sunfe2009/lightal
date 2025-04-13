@@ -4,24 +4,30 @@ import { SEO } from "astro-seo";
 
 interface Props {
   title?: string;
+  image?: string;
+  description?: string;
 }
 
-const { title = "Far Light" } = Astro.props;
+const { 
+  title = "Far Light", 
+  image = "https://far.li/og-image.jpg",
+  description = "@molight 的个人博客，记录想法和学习笔记"
+} = Astro.props;
 ---
 
 <SEO
   title={title}
-  description="@molight 的个人博客，记录想法和学习笔记"
+  description={description}
   canonical="https://far.li"
   openGraph={{
     basic: {
       title: title,
       type: "website",
-      image: "https://far.li/og-image.jpg",
+      image: image,
       url: "https://far.li",
     },
     optional: {
-      description: "@molight 的个人博客，记录想法和学习笔记",
+      description: description,
       siteName: "Far Light",
       locale: "zh_CN",
     }
@@ -30,6 +36,7 @@ const { title = "Far Light" } = Astro.props;
     creator: "@molightme",
     site: "@molightme",
     card: "summary_large_image",
+    image: image,
   }}
   extend={{
     meta: [
